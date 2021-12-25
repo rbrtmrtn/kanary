@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Robert Martin <rmartin@rmart.in>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "^4.17.2"
   }
