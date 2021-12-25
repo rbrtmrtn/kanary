@@ -1,0 +1,11 @@
+{
+  "name": "kanary",
+  "version": "0.0.0",
+  "description": "A sample app for experimenting with Kubernetes",
+  "main": "index.js",
+  "author": "Robert Martin <rmartin@rmart.in>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
