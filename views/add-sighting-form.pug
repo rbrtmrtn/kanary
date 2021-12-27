@@ -1,0 +1,26 @@
+extends layouts/main.pug
+
+block content
+  h2 Add Sighting
+
+  form(action="", method="POST")
+    .mb-3
+      label(for="date", class="form-label") Date 
+      input(id="date", name="date", type="text", class="form-control")
+    .mb-3
+      label(for="time", class="form-label") Time 
+      input(id="time", name="time", type="text", class="form-control")
+    .mb-3
+      label(for="location", class="form-label") Location
+      input(id="location", name="location", type="text", class="form-control")
+    .mb-3
+      label(for="common-name", class="form-label") Common Name
+      input(id="common-name", name="common-name", type="text", class="form-control")
+    .mb-3
+      label(for="count", class="form-label") Count
+      input(id="count", name="count", type="text", class="form-control")
+    .mb-3
+      label(for="notes", class="form-label") Notes
+      input(id="notes", name="notes", type="text", class="form-control")
+    
+    input(type="submit", value="Add")

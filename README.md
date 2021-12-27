@@ -1,3 +1,3 @@
 # kanary
 
-A sample app for experimenting with Kubernetes
+A sample app for experimenting with Kubernetes. Birdwatching-themed 🐤

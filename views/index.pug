@@ -1,0 +1,31 @@
+extends layouts/main.pug
+
+block content
+  .d-flex.flex-row
+    .flex-grow-1
+      h2 Sightings
+    div
+      a(href="/add-sighting") Add Sighting 
+
+  if sightings.length > 0    
+    table.table
+      thead
+        tr
+          th Date
+          th Time
+          th Location
+          th Common Name
+          th Count
+          th Notes
+      tbody
+        each sighting in sightings
+          tr
+            td= sighting.date
+            td= sighting.time
+            td= sighting.location
+            td= sighting.common_name
+            td= sighting.count
+            td= sighting.notes
+    
+  else
+    p You don't have any sightings yet :(
