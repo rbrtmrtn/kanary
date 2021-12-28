@@ -18,10 +18,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // connect to db
-const dbPool = new DbPool({
-  // TODO un-hard code this
-  database: 'kanary',
-});
+const dbPool = new DbPool();
 
 // create router
 const router = new Router();
