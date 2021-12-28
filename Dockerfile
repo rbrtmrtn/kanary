@@ -5,5 +5,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
-# TODO any best practices around this vs. the raw `node index.js`?
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start" ]
