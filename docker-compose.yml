@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: postgres:13.5
+    ports:
+      - 5432:5432
+    environment:
+      # TODO is this janky? put in .env file? doesn't matter since this is just
+      # local development? same applies to sensitive db env vars for app service
+      POSTGRES_PASSWORD: $DB_PASSWORD
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      PGHOST: $DB_HOST
+      PGUSER: $DB_USER
+      PGPASSWORD: $DB_PASSWORD
+volumes:
+  db-data:

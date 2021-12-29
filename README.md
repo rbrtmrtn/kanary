@@ -4,23 +4,29 @@ A sample app for experimenting with Kubernetes. Birdwatching-themed 🐤
 
 # Development
 
-To build the Docker image:
+You can work on this app locally using Docker Compose or a local Kubernetes cluster. Choose the tooling that works best for you.
+
+## Docker Compose
+
+First, create a file called `.env` in the root of this repo. Then edit it to look like:
 
 ```
-docker build . -t rbrtmrtn/kanary
+DB_HOST=db
+DB_USER=postgres
+DB_PASSWORD=<some password>
 ```
 
-To run the Docker container:
+Note that the password is only used for local development, so no need to get too crazy with it 🙃
 
-> Note: this assumes Postgres is running on the host on port 5432.
+Next, run the following commands to build/run the Docker Compose services and bootstrap the database:
 
 ```
-docker run \
-  -d \
-  -p 3000:3000 \
-  -e PGHOST=host.docker.internal \
-  -e PGDATABASE=kanary \
-  -e PGUSER=<user> \
-  --rm \
-  rbrtmrtn/kanary
+docker-compose up
+docker-compose exec app bash -c "npm i -g knex && cd db && knex migrate:latest && knex seed:run"
 ```
+
+Now visit [http://localhost:3000](http://localhost:3000), and you should see the app with some seed data!
+
+## Kubernetes
+
+TODO
