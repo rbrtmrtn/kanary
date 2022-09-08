@@ -20,8 +20,8 @@ Note that the password is only used for local development, so no need to get too
 
 Next, run the following commands to build/run the Docker Compose services and bootstrap the database:
 
-```
-docker-compose up
+```bash
+docker-compose up -d
 docker-compose exec app bash -c "npm i -g knex && cd db && knex migrate:latest && knex seed:run"
 ```
 
